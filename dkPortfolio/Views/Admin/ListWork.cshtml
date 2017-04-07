@@ -1,0 +1,65 @@
+﻿@model IEnumerable<dkPortfolio.Models.Work>
+
+@{
+    ViewBag.Title = "ListWork";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@helper kisalt(string yazi) { 
+    if (yazi.Length > 200)
+    {
+        <u>@yazi.Substring(0, 200)</u>
+    }
+    else
+    {
+        <u>@yazi</u>      
+    }
+    }
+
+
+<div class="icerik">
+    <h2>ListWork</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "CreateWork")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Picture
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img class="responsive" style="height:100px;width:180px;" src="@item.Picture.Path" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @kisalt(item.Text)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditWork", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "DeleteWork", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

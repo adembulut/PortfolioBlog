@@ -1,0 +1,26 @@
+﻿.header {
+    padding: 30px 30px;
+    background-color: #fbebeb;
+}
+
+    .header .nav li {
+        font-weight: bold;
+        /*border-radius:0 0 0 0;*/
+        background-color: pink;
+    }
+
+.icerik {
+    padding: 30px 30px;
+}
+
+    .icerik .option-icerik {
+        padding: 10px 10px;
+        background-color: #fbebeb;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #ff0000;
+    }
+
+.back-img {
+    background-image: url("~/Content/back.png");
+}

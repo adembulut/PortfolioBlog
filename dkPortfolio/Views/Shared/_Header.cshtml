@@ -1,0 +1,34 @@
+﻿
+<div class="header">
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @{
+                    dkPortfolio.Models.Account account = ViewBag.Account;
+                    if (account != null)
+                    {
+                        <a class="navbar-brand" href="/Home">@account.Name @account.Surname</a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand" href="#">Admin Not Found</a>
+                    }
+                }
+                
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Home/Work" >Work</a></li>
+                    <li><a href="/Home/About">About</a></li>
+                    <li><a href="/Home/Blog">Blog</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>

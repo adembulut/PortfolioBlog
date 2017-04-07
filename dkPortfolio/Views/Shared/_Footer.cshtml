@@ -1,0 +1,40 @@
+﻿@{
+    dkPortfolio.Models.Account account = ViewBag.Account;
+   
+}
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h4>My Bunker</h4>
+                <p>
+                    @{
+                        foreach (string item in account.Address.Split(','))
+                        {
+                            @item <br />
+                        }
+                    }
+                </p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                <h4>My Links</h4>
+                <p>
+                    @{
+                        foreach (dkPortfolio.Models.Link item in ViewBag.Link)
+                        {
+                            <a href="@item.Url" target="_blank">@item.Name</a><br />
+                        }
+                    }
+                </p>
+            </div><!-- /col-lg-4 -->
+
+            <div class="col-lg-4">
+                <h4>About Me</h4>
+                <p>@account.About</p>
+            </div><!-- /col-lg-4 -->
+
+        </div>
+
+    </div>
+</div>

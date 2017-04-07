@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+<div class="dkadem">
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+            <h3>CONTACT ME</h3>
+            <hr>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        </div>
+    </div>@*ID, NameSurname, Email, Subject, Text*@
+    <div class="row mt">
+        <div class="col-lg-8 col-lg-offset-2">
+            <form action="/Home/Contact" role="form" method="post">
+                    <input type="text" class="form-control" name="NameSurname" placeholder="Name Surname">
+                    <br>
+                
+                    <input type="email" class="form-control" name="Email" placeholder="Enter email">
+                    <br>
+                
+                    <input type="text" class="form-control" name="Subject" placeholder="Subject">
+                    <br>
+                
+                <textarea class="form-control" rows="6" name="Text" placeholder="Enter your text here"></textarea>
+                <br>
+                <button type="submit" class="btn btn-success">SUBMIT</button>
+            </form>
+        </div>
+    </div><!-- /row -->
+</div>

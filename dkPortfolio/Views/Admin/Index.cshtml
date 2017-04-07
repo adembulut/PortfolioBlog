@@ -1,0 +1,8 @@
+﻿@model IEnumerable<dkPortfolio.Models.Article>
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = null;
+}
+
+@Html.Partial("ListBlog",Model)

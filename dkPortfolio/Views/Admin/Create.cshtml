@@ -1,0 +1,44 @@
+﻿@model dkPortfolio.Models.Article
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="icerik">
+    <h3>Create New Article</h3>
+
+
+
+    <div class="form-horizontal">
+
+        <hr />
+        <form role="form" method="post" action="/Admin/CreateArticle">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Header</span>
+                <input type="text" name="Header" class="form-control" placeholder="Example Header ['Hello MVC']" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Picture Url</span>
+                <input type="text" name="PictureUrl" class="form-control" placeholder="Example :http://placehold.it/350x150" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Tags</span>
+                <input type="text" name="Tags" class="form-control" placeholder="Use Sperator ' , '" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <label for="comment">Content:</label>
+            <textarea class="form-control" name="Text" rows="5" id="comment" placeholder="What do you think now?"></textarea>
+
+            <br />
+            <button type="submit" class="btn btn-success" style="float:right;">Create</button>
+        </form>
+
+    </div>
+
+
+    <div>
+        @Html.ActionLink("Back to List", "ListBlog")
+    </div>
+</div>

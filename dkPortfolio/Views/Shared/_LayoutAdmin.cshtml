@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="@Url.Content("~/Content/Assets/css/bootstrap.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/Assets/css/main.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/ynt.css")" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+
+
+        <ul class="nav nav-pills">
+            <li role="presentation"><a  target="_blank" href="/Home">View Site</a></li>
+            <li role="presentation" class="active"><a href="/Admin/Logout">Çıkış Yap</a></li>
+            <li role="presentation">
+            <a href="/Admin/ListBlog">Blogs(@ViewBag.sayi)</a>
+            </li>
+            <li role="presentation">
+                <a href="/Admin/ListWork">Works(@ViewBag.wSayi)</a>
+            </li>
+            <li role="presentation"><a href="/Admin/Option">Options[Site]</a></li>
+            <li role="presentation"><a href="/Admin/OptionsAdmin">Options[Admin]</a></li>
+        </ul>
+    </div>
+
+
+    @RenderBody()
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="@Url.Content("~/Content/Assets/js/hover.zoom.js")"></script>
+    <script src="@Url.Content("~/Content/Assets/js/hover.zoom.conf.js")"></script>
+    <script src="@Url.Content("~/Content/Assets/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+</body>
+</html>

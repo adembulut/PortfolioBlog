@@ -1,0 +1,55 @@
+﻿@model dkPortfolio.Models.Work
+@{
+    ViewBag.Title = "EditWork";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="icerik">
+    <h3>Edit Work</h3>
+
+    <div class="form-horizontal">
+        <h4>Work</h4>
+        <hr />
+        <form role="form" method="post" action="/Admin/EditWork?id=@Model.ID">
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Work Name</span>
+                <input type="text" name="Name" class="form-control" value="@Model.Name" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Work Type</span>
+                <input type="text" name="Type" class="form-control" value="@Model.Type" placeholder="Project Type : EX: Mobile,Web vs" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Short Text</span>
+                <input type="text" name="Text" class="form-control" value="@Model.Text" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Optional Url</span>
+                <input type="text" name="Url" class="form-control"  placeholder="Url" value="@Model.Url" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Picture Url</span>
+                <input type="text" name="PictureUrl" class="form-control" value="@Model.Picture.Path" placeholder="Example :http://placehold.it/350x150" aria-describedby="basic-addon1">
+            </div>
+            <br />
+            <div class="form-group" style="margin:0 5px;">
+                <label for="comment">Long Description:</label>
+                <textarea class="form-control" rows="5" name="LongText">@Model.LongText</textarea>
+            </div>
+            <br />
+            <div class="form-group" style="margin:0 5px;">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</div>

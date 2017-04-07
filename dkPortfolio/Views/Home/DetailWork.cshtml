@@ -1,0 +1,24 @@
+﻿@model dkPortfolio.Models.Account
+@{
+    ViewBag.Title = "DetailWork";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    dkPortfolio.Models.Work work = ViewBag.Work;
+}
+
+<div class="container pt">
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+            <h3>@work.Name</h3>
+            <hr>
+            <p>@work.Text</p>
+        </div>
+    </div>
+    <div class="row mt centered">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p><img src="@work.Picture.Path" class="img-responsive" /></p>
+            <p>@work.LongText</p>
+            <p><bt>Client: <a href="@work.Url">@work.Url</a></bt> - <bt>Type: <a href="#">@work.Type</a></bt> - <bt>Date: <a href="#">@work.Date.Value.ToString("MMMM yyyy")</a></bt></p>
+        </div>
+    </div><!-- /row -->
+</div><!-- /container -->
+

@@ -1,0 +1,32 @@
+﻿@model dkPortfolio.Models.Account
+    @{
+        ViewBag.Title = "Blogs";
+        dkPortfolio.Models.Article article = ViewBag.Article;
+    }
+
+    <div id="white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <p><img src="@article.Account.Picture.Path" width="50px" height="50px"> <ba>@article.Account.Name @article.Account.Surname</ba></p>
+                    <p><bd>@article.Date.Value.ToString("MMMM yyyy")</bd></p>
+                    <h4>@article.Header</h4>
+                    <p><img class="img-responsive" src="@article.Picture.Path" alt=""></p>
+                    <p>@article.Text</p>
+                    <br>
+                    <p><bt>TAGS: 
+                        @foreach (var item in @article.Tags)
+                        {
+                            
+                            <a href="/Home/Tag?tag=@item.Textt">@item.Textt</a> 
+                        }
+                        
+                        
+                        
+                        </bt></p>
+                    <hr>
+                    <p><a href="/Home/Blog"># Back</a></p>
+                </div>
+            </div><!-- /row -->
+        </div> <!-- /container -->
+    </div>

@@ -1,0 +1,62 @@
+﻿@model dkPortfolio.Models.Work
+
+@{
+    ViewBag.Title = "DeleteWork";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DeleteWork</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Work</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Account.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account.Name)
+        </dd>
+
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <br />
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+        <br />
+
+
+
+    </dl>
+    <form action="/Admin/DeleteWorkThis?id=@Model.ID" method="post">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListWork")
+        </div>
+    </form>
+</div>

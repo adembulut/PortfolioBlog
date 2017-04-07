@@ -1,0 +1,10 @@
+﻿.header {
+}
+
+    .header .navbar {
+        color: black;
+    }
+
+        .header .navbar .container li:hover {
+            background-color: #555;
+        }

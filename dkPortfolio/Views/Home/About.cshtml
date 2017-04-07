@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+@Html.Partial("_About")
+@{
+    dkPortfolio.Models.Option o = ViewBag.O;
+    List<dkPortfolio.Models.Progress> pList = ViewBag.pList;
+}
+@model dkPortfolio.Models.Account
+<div class="container pt">
+    <div class="row mt centered">
+        <div class="col-lg-3">
+            <span class="glyphicon glyphicon-book"></span>
+            <p>@o.oBook</p>
+        </div>
+
+        <div class="col-lg-3">
+            <span class="glyphicon glyphicon-user"></span>
+            <p>@o.oUser</p>
+        </div>
+        <div class="col-lg-3">
+            <span class="glyphicon glyphicon-fire"></span>
+            <p>@o.oFire</p>
+        </div>
+        <div class="col-lg-3">
+            <span class="glyphicon glyphicon-globe"></span>
+            <p>@o.oGlobe</p>
+        </div>
+    </div><!-- /row -->
+
+    <div class="row mt">
+        <div class="col-lg-6">
+            <h4>THE THINKING</h4>
+            <p>@o.oThinking</p>
+        </div><!-- /colg-lg-6 -->
+
+        <div class="col-lg-6">
+            <h4>THE TECHNOLOGIES</h4>
+
+
+            @foreach (dkPortfolio.Models.Progress item in pList)
+            {
+                @item.Data
+                <div class="progress">
+                    <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;">
+                        <span class="sr-only">@item.Value% Complete</span>
+                    </div>
+                </div>
+
+            }
+
+
+        </div><!-- /col-lg-6 -->
+    </div><!-- /row -->
+</div>

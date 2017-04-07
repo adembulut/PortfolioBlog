@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@Html.Partial("_About")
+
+<div class="container pt">
+    @{
+        List<dkPortfolio.Models.Work> list = ViewBag.Work;
+        <div class="row mt centered">
+            @if (list.Count > 2)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    <div class="col-lg-4">
+                        <a class="zoom green" href="/Home/DetailWork/@list[i].ID"><img class="img-responsive" src="@list[i].Picture.Path" alt="" /></a>
+                        <p>@list[i].Name</p>
+                    </div>
+                }
+            }
+        </div><!-- /row -->
+
+        <div class="row mt centered">
+            @if (list.Count > 5)
+            {
+                for (int i = 3; i < 6; i++)
+                {
+                    <div class="col-lg-4">
+                        <a class="zoom green" href="/Home/DetailWork/@list[i].ID" target="_blank"><img class="img-responsive" src="@list[i].Picture.Path" alt="" /></a>
+                        <p>@list[i].Name</p>
+                    </div>
+                }
+            }
+        </div><!-- /row -->
+    }
+
+</div><!-- /container -->
+<!-- +++++ Footer Section +++++ -->

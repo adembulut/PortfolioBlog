@@ -1,0 +1,53 @@
+﻿@model dkPortfolio.Models.Account
+@{
+    ViewBag.Title = "Blog";
+    List<dkPortfolio.Models.Article> listBlog = ViewBag.listBlog;
+}
+
+@helper yazdir(string yazi, int id)
+{
+    if (yazi.Length > 300)
+    {
+        <p>@yazi.Substring(0, 300) ...</p>
+        <p><a href="/Home/Blogs/@id">Continue Reading...</a></p>
+    }
+    else
+    {
+        <p>@yazi.ToString() ...</p>
+
+    }
+}
+
+@{
+
+    for (int i = 0; i < listBlog.Count; i++)
+    {
+        dkPortfolio.Models.Article item = listBlog[i];
+        string s = "";
+        if (i % 2 == 0)
+        {
+            s = "grey";
+        }
+        else
+        {
+            s = "white";
+        }
+
+        <div id="@s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <p><img src="@item.Account.Picture.Path" style="height:50px;width:50px;"> <ba>@item.Account.Name @item.Account.Surname</ba></p>
+                        <p><bd>@item.Date.Value.ToString("MMMM yyyy")</bd></p>
+                        <p><a href="/Home/Blogs/@item.ID"><img src="@item.Picture.Path" class="img-responsive" /></a></p>
+                        <h4><a href="/Home/Blogs/@item.ID">@item.Header</a></h4>
+
+                        @yazdir(item.Text, item.ID)
+
+                    </div>
+                </div><!-- /row -->
+            </div> <!-- /container -->
+        </div>
+    }
+
+}

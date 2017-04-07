@@ -1,0 +1,28 @@
+﻿@model dkPortfolio.Models.Account
+@{
+    ViewBag.Title = "Work";
+}
+
+<div class="container pt">
+
+
+    <div class="row mt">
+        <div class="col-lg-6 col-lg-offset-3 centered">
+            <h3>MY WORK</h3>
+            <hr>
+            <p>You can look at things</p>
+        </div>
+    </div>
+    @{
+        List<dkPortfolio.Models.Work> list = ViewBag.isler;
+    }
+    @for (int i = 0; i < list.Count; i++)
+    {
+        <div class="col-lg-4">
+            <a class="zoom green" href="/Home/DetailWork/@list[i].ID"><img class="img-responsive" src="@list[i].Picture.Path" alt="" /></a>
+            <p>@list[i].Name</p>
+        </div>
+    }
+       
+</div>
+
